@@ -10,12 +10,17 @@ import Admin from './pages/Admin';
  * матчиться с урлами вида /students/что-либо
  */
 import { ADMIN_ROUTE, DEVICE_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE, BASKET_ROUTE } from './utils/consts';
+/**
+ * Импорт экспортов каждой страницы
+ */
 import Basket from './pages/Basket';
 import Shop from './pages/Shop';
 import Auth from './pages/Auth';
 import DevicePage from './pages/DevicePage';
 /**
  * Для аутентифицированных запросов
+ * Аутентификация которых происходит 
+ * В AppRoute.js
  */
 export const authRoutes = [
     {

@@ -2,7 +2,7 @@ import React from "react";
 const Auth = () => {
     return (
         <div>
-            Auth
+            Страница аутентификации  и регистрации
         </div>
     )
 }

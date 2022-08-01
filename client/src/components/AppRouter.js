@@ -20,17 +20,20 @@ const AppRouter = () => {
      * Флаг для проверки авторизации пользователя
      */
     const isAuth = false;
+    // const isAuth = true;
     return (
         /**
          * Component изменён на Element
          */
         <Routes>
             {isAuth && authRoutes.map(({ path, Element }) =>
-                <Route key={path} path={path} element={<Element />} exact />
+                <Route key={path} path={path} element={<Element />} />
+                /* <Route key={path} path={path} element={<Element />} exact /> */
             )}
 
             {publicRoutes.map(({ path, Element }) =>
-                <Route key={path} path={path} element={<Element />} exact />
+                <Route key={path} path={path} element={<Element />} />
+                /* <Route key={path} path={path} element={<Element />} exact /> */
             )}
         </Routes>
     );
