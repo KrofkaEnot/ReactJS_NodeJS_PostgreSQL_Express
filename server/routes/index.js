@@ -6,13 +6,15 @@ const userRouter = require('./userRouter')
 const typeRouter = require('./typeRouter')
 const brandRouter = require('./brandRouter')
 const deviceRouter = require('./deviceRouter')
-// const ratingRouter = require('./ratingRouter')
+/* Рейтинги роутер*/
+const ratingRouter = require('./ratingRouter')
 
 router.use('/user', userRouter);
 router.use('/type', typeRouter);
 router.use('/brand', brandRouter);
 router.use('/device', deviceRouter);
-// router.use('/rating', ratingRouter);
+/* Рейтинги ссылка */
+router.use('/ratings', ratingRouter); 
 
-// Доступность роутов извне //
+/* Доступность роутов извне */
 module.exports = router;

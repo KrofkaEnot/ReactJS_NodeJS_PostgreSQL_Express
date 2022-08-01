@@ -3,7 +3,7 @@
     DeviceInfo - используется в модели Device в поле info
         так как имеется связь поля с таблицей
 */
-const { Device, DeviceInfo } = require('../models/models')
+const { Device, DeviceInfo, Rating } = require('../models/models')
 
 // Импортирование обработчика ошибок
 const ApiError = require('../error/ApiError')
@@ -108,12 +108,16 @@ class DeviceController {
                 /*
                  Показывает связанное поле модели Device с моделью
                  DeviceInfo модель содержит заполненную информацию 
+                 Жадная загрузка выполняется в Sequelize с помощью include параметра
                 */
-                include: [{ model: DeviceInfo, as: 'info' }]
+                include: [
+                    { model: DeviceInfo, as: 'info' },
+                    { model: Rating, as: 'ratings' },
+                ]
             },
         )
         return res.json(device)
-    }
+    } 
 }
 
 // Создаётся новый объект контроллера

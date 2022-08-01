@@ -46,11 +46,12 @@ const DeviceInfo = sequelize.define('device_info', {
     description: { type: DataTypes.STRING, allowNull: false },
 }
 )
-
+/* Связь один к одному */
 User.hasOne(Basket) // Одна корзина у пользователя
 Basket.belongsTo(User) // Корзина принадлежит пользователю
 
-User.hasMany(Rating) // Пользователь ставит много оценок
+/* Связь один ко многим */
+User.hasMany(Rating, { as: 'ratings' }) // ассоциированное эксперементальное поле
 Rating.belongsTo(User) // Оценки принадлежат пользователю
 
 Basket.hasMany(BasketDevice)
@@ -62,7 +63,7 @@ Device.belongsTo(Type)
 Brand.hasMany(Device)
 Device.belongsTo(Brand)
 
-Device.hasMany(Rating)
+Device.hasMany(Rating, { as: 'ratings' }) // ассоциированное эксперементальное поле
 Rating.belongsTo(Device)
 
 Device.hasMany(BasketDevice)
