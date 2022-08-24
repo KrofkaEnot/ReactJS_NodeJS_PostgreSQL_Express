@@ -20,26 +20,57 @@
     Однако makeAutoObservableего нельзя использовать в классах, которые имеют super или являются подклассами .
 
  */
+
 import { makeAutoObservable } from 'mobx';
+import images from '../assets/images.jpg';
 
 export default class DeviceStore {
     constructor() {
         this._types = [
             { id: 1, name: 'Холодильники' },
             { id: 2, name: 'Смартфоны' },
+            { id: 3, name: 'Книги' },
+            { id: 4, name: 'Светильники' },
         ]
         this._brands = [
             { id: 1, name: 'Samsung' },
             { id: 2, name: 'Apple' },
+            { id: 3, name: 'SangYong' },
+            { id: 4, name: 'Alcatel' },
+            { id: 5, name: 'Voxtail' },
+            { id: 6, name: 'Nokia' },
+            { id: 7, name: 'Sony' },
+            { id: 8, name: 'Xiaomi' },
+            { id: 9, name: 'BlackBarry' },
+            { id: 10, name: 'FreeCall' },
+            { id: 11, name: 'MGTS' },
+            { id: 12, name: 'BBK' },
         ]
+
+        /**
+         * img: 'https://' - может быть ссылкой на картинку 
+         * img: images - может быть импортированный объект 
+         */
         this._devices = [
-            { id: 1, name: 'iphone 12pro', price: 120000, rating: 4, img: 'https://' },
-            { id: 2, name: 'iphone 11pro', price: 100000, rating: 5, img: 'https://' },
-            { id: 3, name: 'iphone 10pro', price: 80000, rating: 3, img: 'https://' },
-            { id: 4, name: 'iphone 9pro', price: 70000, rating: 2, img: 'https://' },
+            { id: 1, name: 'iphone 12pro', price: 120000, rating: 4, img: images },
+            { id: 2, name: 'iphone 11pro', price: 100000, rating: 5, img: images },
+            { id: 3, name: 'iphone 10pro', price: 80000, rating: 3, img: images },
+            { id: 4, name: 'iphone 9pro', price: 70000, rating: 2, img: images },
+            { id: 1, name: 'Alcatel', price: 120000, rating: 2, img: images },
+            { id: 2, name: 'BBK', price: 1000, rating: 3, img: images },
+            { id: 3, name: 'Sony', price: 8000, rating: 5, img: images },
+            { id: 4, name: 'Siemens', price: 7000, rating: 2, img: 'https://' },
         ]
+
+        /**
+         * Поле для хранения выделенных объектов
+         */
+        this._selectedType = {}
+        this._selectedBrand = {}
+
         makeAutoObservable(this) /**Отслеживает изменения в контексте */
     }
+
     /**
      * Правила вывода:
         Все собственные свойства становятся observable.
@@ -61,6 +92,18 @@ export default class DeviceStore {
     setDevices(devices) {
         this._devices = devices
     }
+
+    /**
+     * Поле для выделенных объектов
+     */
+    setSelectedType(type) {
+        return this._selectedType = type
+    }
+    setSelectedBrand(brand) {
+        return this._selectedBrand = brand
+    }
+
+
     get types() {
         return this._types
     }
@@ -69,5 +112,16 @@ export default class DeviceStore {
     }
     get devices() {
         return this._devices
+    }
+
+    /**
+     * Для получения визуально-выбранного элемента в Shop.js
+     * Временное местоположение в store/DeviceStore.js
+     */
+    get selectedType() {
+        return this._selectedType
+    }
+    get selectedBrand() {
+        return this._selectedBrand
     }
 }
