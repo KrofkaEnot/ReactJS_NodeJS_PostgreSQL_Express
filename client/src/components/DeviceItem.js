@@ -14,7 +14,17 @@ import { DEVICE_ROUTE } from '../utils/consts';
  */
 
 const DeviceItem = ({ device }) => {
+    /**
+     * Для использования пагинации
+     */
     const navigate = useNavigate()
+    /**
+     * onClick={() => navigate(DEVICE_ROUTE + '/' + device.id)
+     * слушатель для события нажатия
+     * передаёт константу пути, device - айди девайса через хук
+     * 
+     * Card - карточка продукта со стилями
+     */
     return (
         <Col md={3} className='mt-3' onClick={() => navigate(DEVICE_ROUTE + '/' + device.id)}>
             <Card style={{ width: 150, cursor: 'pointer' }} border={'black'}>
