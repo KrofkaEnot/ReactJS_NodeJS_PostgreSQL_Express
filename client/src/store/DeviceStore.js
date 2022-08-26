@@ -52,14 +52,14 @@ export default class DeviceStore {
          * img: images - может быть импортированный объект 
          */
         this._devices = [
-            { id: 1, name: 'iphone 12pro', price: 120000, rating: 4, img: images },
+            { id: 1, name: 'iphone 12pro', price: 120000, rating: 4, img: 'https://img2.akspic.ru/previews/9/0/9/8/6/168909/168909-ballonchik-graffiti-ulichnoe_iskusstvo-svet-purpur-x750.jpg' },
             { id: 2, name: 'iphone 11pro', price: 100000, rating: 5, img: images },
             { id: 3, name: 'iphone 10pro', price: 80000, rating: 3, img: images },
             { id: 4, name: 'iphone 9pro', price: 70000, rating: 2, img: images },
-            { id: 1, name: 'Alcatel', price: 120000, rating: 2, img: images },
-            { id: 2, name: 'BBK', price: 1000, rating: 3, img: images },
-            { id: 3, name: 'Sony', price: 8000, rating: 5, img: images },
-            { id: 4, name: 'Siemens', price: 7000, rating: 2, img: 'https://' },
+            { id: 5, name: 'Alcatel', price: 120000, rating: 2, img: images },
+            { id: 6, name: 'BBK', price: 1000, rating: 3, img: images },
+            { id: 7, name: 'Sony', price: 8000, rating: 5, img: images },
+            { id: 8, name: 'Siemens', price: 7000, rating: 2, img: 'https://' },
         ]
 
         /**
@@ -95,6 +95,7 @@ export default class DeviceStore {
 
     /**
      * Поле для выделенных объектов
+     * Хранит/Устанавливает выделенный объект
      */
     setSelectedType(type) {
         return this._selectedType = type
@@ -116,7 +117,7 @@ export default class DeviceStore {
 
     /**
      * Для получения визуально-выбранного элемента в Shop.js
-     * Временное местоположение в store/DeviceStore.js
+     * Отдаёт выделенный элемент 
      */
     get selectedType() {
         return this._selectedType

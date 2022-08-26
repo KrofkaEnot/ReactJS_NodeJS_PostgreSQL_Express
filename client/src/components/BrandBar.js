@@ -5,9 +5,10 @@ import { Context } from "..";
 const BrandBar = observer(() => {
     const { device } = useContext(Context)
     /**
-     * device.brands.map(brand => происходит перемещение по девайсам
-     * назначается слушатель события onClick()
+     * device.brands.map(brand => происходит перемещение по девайсам.
      * 
+     * Назначается слушатель события onClick() для установки выделения
+     * на карточку.
      */
     return (
         // <Row className="d-flex">

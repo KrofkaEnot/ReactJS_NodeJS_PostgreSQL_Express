@@ -1,5 +1,5 @@
 /**
- * Девайсы
+ * Девайсы\Карточки девайсов
  */
 import React from 'react';
 import { Card, Col, Image } from 'react-bootstrap';

@@ -1,5 +1,5 @@
 /**
- * Список девайсов
+ * Перебор карточек девайсов
  */
 import { observer } from "mobx-react-lite";
 import React, { useContext } from "react";
