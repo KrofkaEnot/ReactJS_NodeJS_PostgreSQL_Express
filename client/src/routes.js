@@ -1,7 +1,4 @@
-/**
- * Импорт страницы
- */
-import Admin from './pages/Admin';
+
 /**
  * Путь к константам путей
  * В React v6 произошли изменения относительно 
@@ -13,6 +10,7 @@ import { ADMIN_ROUTE, DEVICE_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE,
 /**
  * Импорт экспортов каждой страницы
  */
+import Admin from './pages/Admin';
 import Basket from './pages/Basket';
 import Shop from './pages/Shop';
 import Auth from './pages/Auth';
