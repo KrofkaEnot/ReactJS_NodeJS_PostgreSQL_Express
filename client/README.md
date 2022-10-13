@@ -68,3 +68,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Создание директории и переход в неё.
+Создание внутри рабочей директории каталога server.
+В server => npm init -y
+npm install express pg pg-hstore sequelize cors dotenv jwt-decode
+npm install -D nodemon
+В файле package.json:
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+
+npm i jwt-decode - для распарсивания токена 

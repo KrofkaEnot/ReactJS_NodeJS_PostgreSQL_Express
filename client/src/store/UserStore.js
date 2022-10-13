@@ -27,7 +27,7 @@ export default class UserStore {
         /**
          * Статус авторизации пользователя
          */
-        this._isAuth = true
+        this._isAuth = false
         this._user = {}
         /**
          * Отслеживает изменения в контексте 
